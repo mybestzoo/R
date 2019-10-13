@@ -42,7 +42,7 @@ pairsRet <- ifelse(residuals > border.top, (-EUR.ret + USD.ret)/2,
                    ifelse(residuals < border.bottom, (EUR.ret - USD.ret)/2, 0))
 
 #make report
-Portf <- (USD.ret + EUR.ret)/2
+Portf <- USD.ret#(USD.ret + EUR.ret)/2
 str <- cbind(pairsRet, Portf)
 colnames(str) <- c("Pairs trade", "50/50 portfolio")
 charts.PerformanceSummary(str)
